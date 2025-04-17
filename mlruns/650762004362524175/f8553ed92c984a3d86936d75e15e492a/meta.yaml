@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/650762004362524175/f8553ed92c984a3d86936d75e15e492a/artifacts
+deleted_time: 1744705924678
+end_time: 1744705882400
+entry_point_name: ''
+experiment_id: '650762004362524175'
+lifecycle_stage: deleted
+run_id: f8553ed92c984a3d86936d75e15e492a
+run_name: likeable-hawk-870
+run_uuid: f8553ed92c984a3d86936d75e15e492a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744705881873
+status: 4
+tags: []
+user_id: suryanshsinha

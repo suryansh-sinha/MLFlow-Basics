@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/650762004362524175/3d6640060d98420f90ce48702c67e1d3/artifacts
+end_time: 1744703168384
+entry_point_name: ''
+experiment_id: '650762004362524175'
+lifecycle_stage: active
+run_id: 3d6640060d98420f90ce48702c67e1d3
+run_name: traveling-sponge-775
+run_uuid: 3d6640060d98420f90ce48702c67e1d3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744703167852
+status: 3
+tags: []
+user_id: suryanshsinha

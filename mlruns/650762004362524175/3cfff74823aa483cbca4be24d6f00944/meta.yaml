@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/650762004362524175/3cfff74823aa483cbca4be24d6f00944/artifacts
+end_time: 1744705936002
+entry_point_name: ''
+experiment_id: '650762004362524175'
+lifecycle_stage: active
+run_id: 3cfff74823aa483cbca4be24d6f00944
+run_name: gregarious-steed-475
+run_uuid: 3cfff74823aa483cbca4be24d6f00944
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744705932087
+status: 3
+tags: []
+user_id: suryanshsinha

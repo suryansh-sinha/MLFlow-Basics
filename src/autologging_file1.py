@@ -28,6 +28,7 @@ max_depth = 16
 n_estimators = 32
 
 # Setting which experiment the run goes inside.
+mlflow.autolog()
 mlflow.set_experiment('Test-Exp1')
 
 with mlflow.start_run():
@@ -36,10 +37,6 @@ with mlflow.start_run():
     
     y_pred = rf.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
-    
-    mlflow.log_metric('accuracy', accuracy)
-    mlflow.log_param('max_depth', max_depth)
-    mlflow.log_param('n_estimators', n_estimators)
     
     # Creating and saving a confusion matrix plot
     cm = confusion_matrix(y_test, y_pred)
@@ -50,15 +47,10 @@ with mlflow.start_run():
     plt.title('Confusion Matrix')
     plt.savefig('confusion_mat.png')
     
-    # Log artifacts using MLFlow
-    mlflow.log_artifact('confusion_mat.png')
-    mlflow.log_artifact(__file__)   # Also tracking this script file that we're writing the code in.
+    # Log artifacts (not covered by autolog)
+    mlflow.log_artifact(__file__)
     
-    # tags
-    # mlflow.set_tag()
+    # Tags
     mlflow.set_tags({'Author':'Suryansh', 'Project':'Wine Classification'})
-    
-    # Log the model
-    mlflow.sklearn.log_model(rf, 'Random Forest Model')
-    
+        
     print(accuracy)

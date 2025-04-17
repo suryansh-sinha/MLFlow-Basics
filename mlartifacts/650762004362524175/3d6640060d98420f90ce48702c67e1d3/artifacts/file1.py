@@ -1,19 +1,11 @@
 import mlflow
-import dagshub
 import mlflow.sklearn
-import seaborn as sns
-import matplotlib.pyplot as plt
 from sklearn.datasets import load_wine
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
-
-# Initializing dagshub
-dagshub.init(repo_owner='suryansh-sinha', repo_name='MLFlow-Basics',)
-
-# Set the tracking URI
-# mlflow.set_tracking_uri('http://127.0.0.1:5000')  LOCAL
-mlflow.set_tracking_uri('https://dagshub.com/suryansh-sinha/MLFlow-Basics.mlflow')
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Load wine dataset
 wine = load_wine()
@@ -27,7 +19,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_
 max_depth = 16
 n_estimators = 32
 
-# Setting which experiment the run goes inside.
+# Set the tracking URI
+mlflow.set_tracking_uri('http://127.0.0.1:5000')
+
+# Mention your experiment name below
 mlflow.set_experiment('Test-Exp1')
 
 with mlflow.start_run():
@@ -53,12 +48,5 @@ with mlflow.start_run():
     # Log artifacts using MLFlow
     mlflow.log_artifact('confusion_mat.png')
     mlflow.log_artifact(__file__)   # Also tracking this script file that we're writing the code in.
-    
-    # tags
-    # mlflow.set_tag()
-    mlflow.set_tags({'Author':'Suryansh', 'Project':'Wine Classification'})
-    
-    # Log the model
-    mlflow.sklearn.log_model(rf, 'Random Forest Model')
     
     print(accuracy)
